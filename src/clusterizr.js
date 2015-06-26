@@ -23,10 +23,8 @@ var exports = module.exports = {
 		// Some defaults
 		self.items = data;
 		self.options.can_debug = self.options.can_debug ? true : false;
-		self.options.maximum_tag_amount = self.options.maximum_tag_amount ? self.options.maximum_tag_amount : 99999;
 		self.options.minimum_cluster_size = self.options.minimum_cluster_size ? self.options.minimum_cluster_size : 15;
 		self.options.maximum_level_distance = self.options.maximum_level_distance ? self.options.maximum_level_distance : 99999;
-		self.options.level_jump = self.options.level_jump ? self.options.level_jump : 1;
 		self.comparison_count = 0;
 		self.data = data;
 		if (!data || !data.length) {
@@ -127,9 +125,7 @@ var exports = module.exports = {
 				nt.push(tag);
 			}
 			post.p_data.tags = nt;
-			if (post.p_data.tags.length < self.options.maximum_tag_amount) {
-				fp.push(post);
-			}
+			fp.push(post);
 		})
 
 		items = self.items = fp;
@@ -227,7 +223,7 @@ var exports = module.exports = {
 		}
 
 		// This lets us define barriers between similar items, but with too many different tags not to be merged
-		var __level_distance = original_group.level - (level - self.options.level_jump);
+		var __level_distance = original_group.level - (level - 1);
 		if (__level_distance > self.options.maximum_level_distance) {
 			self.log("Discance limit exceeded.")
 			return false;
@@ -235,7 +231,7 @@ var exports = module.exports = {
 
 		// So this level did not yield to any matches and we are not on the root level
 		// lets try to push this search to a lower level to see if there will be some matches
-		var result = self.reduce(group, level - self.options.level_jump, original_group);
+		var result = self.reduce(group, level - 1, original_group);
 
 		if (is_root && result) {
 
