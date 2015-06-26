@@ -1,0 +1,10 @@
+{
+  "name": "Clusterizr",
+  "main": "./src/clusterizr.js",
+  "version": "0.0.8",
+  "private": true,
+  "dependencies": {
+    "underscore": ">=1.4.4",
+    "unix-timestamp": ">=0.2.0"
+  }
+}
