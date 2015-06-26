@@ -3,7 +3,7 @@
     "name": "Aron Barocsi",
     "email": "aron.barocsi@gmail.com"
   },
-  "name": "Clusterizr",
+  "name": "clusterizr",
   "homepage": "https://github.com/barocsi/clusterizr",
   "main": "./src/clusterizr.js",
   "version": "0.0.8",
