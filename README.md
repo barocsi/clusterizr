@@ -1,6 +1,6 @@
 # CLUSTERIZR FOR NODEJS
 
-## Hey, show me all the posts that were generated around the same story!
+**Hey, show me all the posts that were generated around the same story!**
 
 Clusterizr is a simplified adaptation of HAC Divisive algorithm. It is good to bring common problems to the ground like:
 
@@ -68,7 +68,7 @@ clusterizr.process(posts, opts, function (err, results) {
 
 outputs
 
-```json
+```javascript
 { statistics:
    [ { gid: 7, level: 3, post_count: 1, tags: [Object] },
      { gid: 3, level: 2, post_count: 3, tags: [Object] },
