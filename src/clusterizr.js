@@ -93,6 +93,7 @@ var exports = module.exports = {
 		self.log("Time required:", t2 - t1);
 
 		cb(null, {statistics: self.final_coll, items: self.items});
+
 	},
 
 	sort: function () {
