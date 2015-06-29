@@ -1,5 +1,6 @@
 # CLUSTERIZR FOR NODEJS
-> Hey, show me all the posts that were generated around the same story!
+
+## Hey, show me all the posts that were generated around the same story!
 
 Clusterizr is a simplified adaptation of HAC Divisive algorithm. It is good to bring common problems to the ground like:
 
@@ -39,7 +40,7 @@ $ npm install clusterizer
 ### Usage
 
 ```javascript
-var clusterizr = require("clusterizr.js");
+var clusterizr = require("clusterizr");
 var posts = [
 	{p_data: {tags: ["dog"]}},
 	{p_data: {tags: ["dog", "jump"]}},
@@ -64,6 +65,30 @@ clusterizr.process(posts, opts, function (err, results) {
     console.log(results);
 })
 ```
+
+outputs
+
+```json
+{ statistics:
+   [ { gid: 7, level: 3, post_count: 1, tags: [Object] },
+     { gid: 3, level: 2, post_count: 3, tags: [Object] },
+     { gid: 0, level: 1, post_count: 7, tags: [Object] } ],
+  items:
+   [ { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 0 },
+     { p_data: [Object], gid: 3 },
+     { p_data: [Object], gid: 3 },
+     { p_data: [Object], gid: 3 },
+     { p_data: [Object], gid: 7 } ] }
+```
+
+meaning that 3 clusters were detected, the first has 1 post (cat, jump and milk were not able to be merged to any cluster because [cat,eat] is not compatible with [cat,jump,milk] and there were no single [cat] rooted item, and this HAC method will not merge [cat,eat] with [cat,jump] or [cat,milk] since they are different 'stories'.
+items show the original input items list with an additional gid parameter. Items that belong to the same group have the same gid.
 
 Happy clustering.
 If you need more elaborate options and a different implementation, I kindly suggest [Clusterfck](https://github.com/harthur/clusterfck "Clusterfck NPM package")
