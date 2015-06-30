@@ -35,7 +35,7 @@ If we think that levels with too big distance should not be merged, we can add a
 ### Installation
 
 ```sh
-$ npm install clusterizer
+$ npm install clusterizr
 ```
 ### Usage
 
@@ -88,5 +88,5 @@ items: [{p_data: [Object], gid: 0},
 meaning that 3 clusters were detected, the first has 1 post (cat, jump and milk were not able to be merged to any cluster because ['cat','eat'] is not compatible with ['cat','jump','milk'] and there were no single ['cat'] root, and this HAC implementation intentionally won't merge ['cat','eat] with ['cat','jump'] or ['cat','milk'] since they are different 'stories'.
 items show the original input items list with an additional gid parameter. Items that belong to the same group have the same gid.
 
-Happy clustering.
-If you need more elaborate options and a different implementation, I kindly suggest [Clusterfck](https://github.com/harthur/clusterfck "Clusterfck NPM package")
+Happy clustering!
+If you need more elaborate options and a different implementation, I kindly suggest [Clusterfck](https://github.com/harthur/clusterfck "Clusterfck NPM package").
