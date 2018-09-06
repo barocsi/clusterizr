@@ -11,7 +11,7 @@ Clusterizr is a simplified adaptation of HAC Divisive algorithm. It is good to b
   - Just cluster anything that is characterized by tags
 
 ## How it works?
-This implementation of HAC is divisive where the flat clustering criteria is *equal* and linking criteria is *fully contained subset*.
+This is slightly similar to HCA but is divisive where the flat clustering criteria is *equal* and linking criteria is *fully contained subset* and supports hops (level merging like KHOPCA)
 When you choose hierarchical clustering, you would try to find not similar items, but items originating from the same root.
 
 For example the way people would tag an image where a dog barks while running after a cat is hierarchical in the following sense: some would only tag by ['dog','cat'] some would add more granularity by using ['dog','cat','running'] and some would completely describe the image by using ['dog','cat','bark','running','chase']. But all originate from the same root.
@@ -30,7 +30,8 @@ If we think that levels with too big distance should not be merged, we can add a
 
 ### References
 
-* [https://en.wikipedia.org/wiki/Hierarchical_clustering] - Hierarchical clustering
+* [Hierarchical clustering](https://en.wikipedia.org/wiki/Hierarchical_clustering)
+* [KHOPCA](https://en.wikipedia.org/wiki/KHOPCA_clustering_algorithm)
 
 ### Installation
 

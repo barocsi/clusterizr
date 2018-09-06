@@ -6,7 +6,7 @@
   "name": "clusterizr",
   "homepage": "https://github.com/barocsi/clusterizr",
   "main": "./src/clusterizr.js",
-  "version": "0.8.14",
+  "version": "0.8.15",
   "private": false,
   "repository": {
     "type": "git",
